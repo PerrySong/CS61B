@@ -12,8 +12,8 @@ package LinkedList;
  */
 
 class SListNode {
-  private Object item;
-  private SListNode next;
+	private Object item;
+	private SListNode next;
 
 
   /**
@@ -21,39 +21,39 @@ class SListNode {
    *  item "obj", whose next list node is to be "next".
    */
 
-  SListNode(Object obj, SListNode next) {
-    this.item = obj;
-    this.next = next;
-  }
+	SListNode(Object obj, SListNode next) {
+		this.item = obj;
+		this.next = next;
+	}
 
   /**
    *  SListNode() (with one parameter) constructs a list node referencing the
    *  item "obj".
    */
 
-  SListNode(Object obj) {
-    this(obj, null);
-  }
+	SListNode(Object obj) {
+		this(obj, null);
+	}
   
-  public Object getItem() {
-	  return this.item;
-  }
+	public Object getItem() {
+		return this.item;
+	}
   
-  public SListNode getNext() {
-	  return next;
-  }
+	public SListNode getNext() {
+		return next;
+	}
   
-  public void deleteNext() {
-	  this.next = next.getNext();
+	public void deleteNext() {
+		this.next = next.getNext();
 	 
-  }
+	}
   
-  public void changeNext(SListNode newNode) {
-	  this.next = newNode;  
-  }
+	public void changeNext(SListNode newNode) {
+		this.next = newNode;  
+	}
   
-  public void changeNode(SListNode newNode, SListNode next) {
-	  this.item = newNode;
-	  this.next.changeNext(next);
-  }
+	public void changeNode(SListNode newNode, SListNode next) {
+		this.item = newNode;
+		this.next.changeNext(next);
+	}
 }
