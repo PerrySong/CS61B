@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Exam {
 	String a;
+	private int[][] row;
 	
 	public Exam() {
 		
@@ -44,6 +45,42 @@ public class Exam {
 		}
 		return result;
 	}
+	
+	//2017/10/18
+	//n^3 algorithm: O(n^3);
+	public boolean checkRows() {
+		for(int i = 0; i < 9; i++) { // for every row
+			for(int j = 0; i < 9; j++) {
+				boolean found = false;
+				for(int k = 0; k < 9; k++) { //for every column
+					if(this.row[i][k] == j) {
+						found = true;
+						break;
+					}
+				}
+				if(!found) return false; 
+			}
+		}
+		return true;
+	}
+	
+	public boolean checkCols() {
+		
+		for(int i = 0; i < 9; i++) { // for every column
+			for(int j = 0; i < 9; j++) {
+				boolean found = false;
+				for(int k = 0; k < 9; k++) { // for every row
+					if(this.row[k][i] == j) {
+						found = true;
+						break;
+					}
+				}
+				if(!found) return false; 
+			}
+		}
+		return true;
+	}
+	
 	
 	public static void main(String[] args) {
 			String x = "racecar";
